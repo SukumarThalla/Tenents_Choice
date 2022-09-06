@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tenents_Choice</title>
+  </head>
+  <body>
+    <div>
+      <div>
+        <h1>Tolet_Details</h1>
+        <div>
+          <form
+            style="
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+            "
+            id="form"
+          >
+            <label for="state"> Select your state </label>
+            <select>
+              <option>Andhra Pradesh</option>
+              <option>Andhra Pradesh</option>
+              <option>Andhra Pradesh</option>
+              <option>Andhra Pradesh</option>
+              <option>Andhra Pradesh</option>
+              <option>Andhra Pradesh</option>
+              <option>Andhra Pradesh</option>
+              <option>Andhra Pradesh</option>
+              <option>Andhra Pradesh</option>
+              <option>Andhra Pradesh</option>
+              <option>Andhra Pradesh</option>
+              <option>Andhra Pradesh</option>
+              <option>Andhra Pradesh</option>
+              <option>Andhra Pradesh</option>
+              <option>Andhra Pradesh</option>
+            </select>
+            <label for="country"> Enter your country </label>
+            <input id="country" type="text" placeholder="Enter your country" />
+            <label for="district"> Enter your district </label>
+            <input
+              id="district"
+              type="text"
+              placeholder="Enter your district"
+            />
+            <label for="village"> Enter your village </label>
+            <input id="village" type="text" placeholder="Enter your village" />
+
+            <label for="pics"> Add pics </label>
+            <input id="pics" type="file" />
+            <br />
+            <label>Upload</label>
+            <button type="submit">Upload</button>
+            <span id="error"></span>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+      let form = document.getElementById("form");
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        validate();
+      });
+
+      function validate() {
+        let name = document.getElementById("name").value.trim();
+
+        let error_element = document.getElementById("error");
+
+        if (name == "") {
+          error_element.innerText = "*Name cannot be empty";
+          return;
+        }
+        if (/\d/.test(name)) {
+          error_element.innerText = "*Name cannot contain Digits";
+          is_name_valid = false;
+          return;
+        }
+        if (name.length < 3) {
+          error_element.innerText = "*Name cannot be lessthan 3 Characters";
+          is_name_valid = false;
+          return;
+        }
+
+        if (pwd == "") {
+          error_element.innerText = "*Password cannot be empty";
+
+          return;
+        }
+        if (pwd.length < 8) {
+          error_element.innerText = "*Password cannot be lessthan 8 Characters";
+
+          return;
+        }
+        if (!/[a-z]+/.test(pwd)) {
+          error_element.innerText =
+            "*Password must contain one lowercase letter";
+
+          return;
+        }
+        if (!/[A-Z]+/.test(pwd)) {
+          error_element.innerText =
+            "*Password must contain one uppercase letter";
+
+          return;
+        }
+        if (!/[@#&-]+/.test(pwd)) {
+          error_element.innerText =
+            "*Password must contain one Special Character";
+
+          return;
+        }
+        if (pwd != cpwd) {
+          error_element.innerText = "*Password confirmation mismatch";
+          is_pwd_valid = false;
+          return;
+        }
+        if (!is_checked) {
+          error_element.innerText =
+            "Please Agree Terms and Conditions to Log-in";
+          return;
+        }
+        if (is_name_valid && is_pwd_valid && is_checked) {
+          form.submit();
+        }
+      }
+    </script>
+  </body>
+</html>
