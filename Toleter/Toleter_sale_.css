@@ -1,0 +1,134 @@
+
+.bg-container {
+  background-image: url("https://th.bing.com/th/id/OIP.ScBb0omfsnkD6XBzNM6K-QHaFE?pid=ImgDet&w=4576&h=3132&rs=1");
+  background-size: cover;
+  align-items: center;
+  
+  
+}
+.tourism-card {
+  text-align: center;
+  background-color: white;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  padding: 5px;
+}
+.button {
+  color: white;
+  background-color: #25b1cc;
+  width: 138px;
+  height: 36px;
+  border-width: 0px;
+  border-radius: 20px;
+}
+.main-heading {
+  font-family: "Roboto";
+}
+.paragraph {
+  font-family: "Roboto";
+}
+.favourite-places-bg-container {
+  background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/towerbg.png");
+  background-size: cover;
+  padding: 24px;
+}
+.favourite-places-heading {
+  color: rgb(10, 9, 10);
+  font-family:"Roboto";
+  font-size: 38px;
+  font-weight: bold;
+  text-align: center;
+}
+.favourite-place-card-container {
+  background-color: rgb(207, 143, 25);
+  border-radius: 30px;
+  padding:16px;
+margin-left: 190px;
+  margin-bottom: 15px;
+  height: 50vh;
+  width: 140vh;
+  display: flex;
+  align-items: stretch;
+}
+.favourite-place-card-heading {
+  color: #0f0e46;
+  font-family: "Roboto";
+  font-size: 23px;
+  font-weight: bold;
+}
+.favourite-place-card-description {
+  color: #010003;
+  font-family: "Roboto";
+  font-size: 15px;
+}
+.favourite-place-card-image {
+  width: 400px; 
+  height: 220px;
+  align-items:center;
+  margin-bottom:10px;
+ 
+ border-top-right-radius: 10px;
+ border-bottom-right-radius: 10px;
+  
+}
+.favourite-place-card-text-container {
+  margin-right: 15px;
+}
+.detailed-view-bg-container {
+  background-color: rgb(3, 238, 97);
+  height: 180vh;detailed-view-bg-container
+  background-size: cover;
+  
+
+}
+.detailed-view-heading {
+  color: rgb(12, 10, 10);
+  font-family: "Roboto";
+  font-size: 38px;
+  font-weight: bold;
+  padding: 24px;
+  text-align: center;
+}
+.detailed-view-card-container {
+  background-color: rgb(213, 34, 34);
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  margin: 24px;
+  background-size: cover;
+  height: 200px;
+  width: 1000px;
+}
+.detailed-view-card-heading {
+  color: #0f0e46;
+  font-family: "Roboto";
+  font-size: 33px;
+  font-weight: bold;
+}
+.detailed-view-card-description {
+  color: #090f0f;
+  font-family: "Roboto";
+  font-size: 40px;
+  text-align: center;
+  padding:10px;
+}
+.detailed-view-card-text-container {
+  padding: 16px;
+ height: 60vh;
+
+}
+.card-text{
+width:100vh;
+padding: 50px;
+background-color:WHITE;
+border-top-left-radius: 10px;
+border-bottom-left-radius: 10px;
+
+}
+.Click 
+}{
+  font-size:10px;
+}
+.card{
+  background-color: black;
+  border-radius:2x solid red;
+}

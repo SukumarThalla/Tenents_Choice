@@ -1,0 +1,36 @@
+.mainbg{
+    background-color: green;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+        
+
+}
+.card1{
+    background-color:aqua;
+    height: 300px;
+    width: 800px;
+    border-radius: 20px;
+   }
+   .box-content{
+    margin: 20px;
+       align-items: center;
+       justify-content: center;
+       font:bold;   border-radius: 10px;
+
+   }
+   .content{
+       padding-top: 70px;
+       padding-left:60px;
+    }
+   .btn{
+       background-color: rebeccapurple;
+        box-sizing:content-box;
+        height: 30px;
+        font-size: 20px;
+        color:white;
+        border-radius: 10px;
+        margin-top: 50px;
+
+           }

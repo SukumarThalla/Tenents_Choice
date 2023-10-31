@@ -1,0 +1,156 @@
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>form validation</title>
+        </head>
+        <body  align="center" style="background-color:rgb(22, 183, 204)"; background-size="cover"; height= "100vh"; padding="0"; margin="0"; ><br><br><br><br><br>
+            
+            <h1   style="color:#b2e930"align="center"><u>OWNER HOUSE REGISISTRATION</u></h1>
+            <table style="background-color:rgb(147, 194, 202)"; style="width:150" align="center">
+                <tr>
+                    <td align="center">
+                 <form id="form">
+                  <label for="state" style="color:rgb(40, 34, 224) "><b> SELECT YOUR STATE </b></label>
+                  <select><br>
+                    <option>Andhra Pradesh</option><br>
+                    <option>Telengana</option><br>
+                  </select><br>
+                  <label for="state" style="color:rgb(40, 34, 224)"><b> SELECT YOUR DISTRICT </b></label>
+                  <select>
+                    <option>Srikakulam</option><br>
+                    <option>Andhra Pradesh</option><br><br>
+                    <option>Andhra Pradesh</option><br>
+                    <option>Andhra Pradesh</option><br>
+                    <option>Andhra Pradesh</option><br><br>
+                    <option>Andhra Pradesh</option><br><br><br>
+                    <option>Andhra Pradesh</option><br>
+                    <option>Andhra Pradesh</option><br>
+                    <option>Andhra Pradesh</option><br>
+                    <option>Andhra Pradesh</option><br>
+                    <option>Andhra Pradesh</option><br>
+                    <option>Andhra Pradesh</option><br>
+                    <option>Andhra Pradesh</option><br>
+                    <option>Andhra Pradesh</option><br>
+                    <option>Andhra Pradesh</option><br>
+                  </select><br>
+                <label for="name" style="color:rgb(40, 34, 224)"><b>USERNAME</b></label>
+                <input type="text"name="uname" id="uname" placeholder="Enter Name"><br><br>
+                <span id="error"></span><br>
+                <label for="pwd"style="color:rgb(40, 34, 224)"><b>USER PASSWORD</b></label>
+                <input type="password" id="pwd" name="password" placeholder="Enter password"><br><br>   
+                <span id="perror"></span><br>
+                <label for="cpassword"style="color:rgb(40, 34, 224)"><b> CONFIRM PASSWORD</b></label>
+                <input type="password" name="cpwd" id="cpassword" placeholder="Retye your password"><br><br>
+                <span id="cperror"></span><br>
+                <label for="number"style="color:rgb(40, 34, 224)"><b>MOBILE NUMBER</b></label>
+                <input type="tel" name="num" id="number" size="10"  maxlength="10" minlength="0"placeholder="enter mobile number"><br><br>
+                <span id="nerror"></span><br>
+                <label for="email"style="color:rgb(40, 34, 224)"> <b>ENTER EMAIL</b></label>
+                <input type="text" name="mail" id="email" placeholder="enter your mail id"><br><br> 
+                <span id="merror"></span><br>
+                <label for="pics" style="color:rgb(40, 34, 224)"><b>Add pics</b> </label>
+                <input id="pics" type="file"/><br>
+                  <span id="error"></span><br>
+                <label style="color:rgb(218, 42, 15)"><b>I ACCEPT THE <u><a>TERMS AND CONDITIONS</a></u></b></label>
+            
+                <input type="checkbox" id="box" name="policys" value="on"><br><br>    
+                <span id="cerror"></span><br>
+                <button type="submit" style=background-color:rgb(24, 205, 0)>SUBMIT</button>
+                </form>
+                <script>
+                    let form=document.getElementById("form");
+                    form.addEventListener("submit",event=>{event.preventDefault();validate();});
+            
+                    function validate()
+                    {
+                        
+                    let name=document.getElementById("uname").value.trim();
+                    let pwd=document.getElementById("pwd").value.trim();
+                    let cpwd=document.getElementById("cpassword");
+                    let mnumber=document.getElementById("number");
+                    let check=document.getElementById("box");
+                    let lmail=document.getElementById("email");
+                    let cspwd=cpwd.value.trim();
+                    let num=mnumber.value.trim();
+                    let mail=lmail.value.trim();
+                    let terror=document.getElementById("error");
+                    if(name===""||name==null)
+                    {
+                        terror.innerText="Not be empty";
+                        return false;
+                    }
+                   
+                    if(name.length<3) 
+                    {
+                        terror.innerText="Should be contain atleast 3 characters";
+                       
+                        return false;
+                    }
+                    if(!isNaN(name))
+                    {
+                    terror.innerText="Only alphabets allowed";
+                    
+                    return false;
+                    }
+                    if(!name.match(/^[A-Z]+[a-z]+/))
+                    {
+                       
+                        terror.innerText="First letter must be captital letter and remaining are in small in username";
+                        return false;
+                    }
+                    let paserror=document.getElementById("perror");
+                    if(pwd.length<7)
+                    {
+                        paserror.innerText="Length must be contain 7 letters";
+                        return false;
+                    } 
+
+                    if(!pwd.match(/[A-Z a-z 0-9]+/))
+                    {
+                        paserror.innerText="Password should be with special characters";
+                        return false;
+                    }
+                    if(!pwd.match(/[@#$%^&*!]/))
+                    {
+                        paserror.innerText="Enter a special character";
+                        return false;
+                    }
+                    let cpaserror=document.getElementById("cperror");
+                    if(cspwd!=pwd)
+                    {
+                        cpaserror.innerText="Confirm password not match";
+                        return false;
+                    }
+                    let numerror=document.getElementById("nerror");
+                    if(num.length!=10)
+                    {
+                        numerror.innerText="Mobile number should be in 10 digits";
+                        return false
+                    }
+                    if(!num.match(/^[6-9]{1}[0-9]{9}/))
+                    {
+                        numerror.innerText="Numbers start with 6-9";
+                        return false;
+                    }
+                    let mailerror=document.getElementById("merror");
+                    if(!mail.match(/^[a-z A-Z_/.-]+@[a-z A-Z]+(?:\.[a-z]{2,6})$/))
+                    {
+                        mailerror.innerText="invalid mail";
+                        return false;
+                    }
+                    let checkerror=document.getElementById("cerror");
+                    if(check.checked !=1){
+                        checkerror.innerText="Please accept terms and conditions";
+                        return false;
+                    }
+                    form.submit();
+                    }
+                    </script>
+                   
+                </td>
+            </tr>
+            </table>
+            
+        </body>
+    </html>
+    

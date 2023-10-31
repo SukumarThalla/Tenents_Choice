@@ -1,129 +1,197 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Tenents_Choice</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+      integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./tolet_homecss1.css" />
   </head>
   <body>
-    <div>
-      <div>
-        <h1>Tolet_Details</h1>
-        <div>
-          <form
-            style="
-              display: flex;
-              flex-direction: column;
-              align-items: flex-start;
-            "
-            id="form"
-          >
-            <label for="state"> Select your state </label>
-            <select>
-              <option>Andhra Pradesh</option>
-              <option>Andhra Pradesh</option>
-              <option>Andhra Pradesh</option>
-              <option>Andhra Pradesh</option>
-              <option>Andhra Pradesh</option>
-              <option>Andhra Pradesh</option>
-              <option>Andhra Pradesh</option>
-              <option>Andhra Pradesh</option>
-              <option>Andhra Pradesh</option>
-              <option>Andhra Pradesh</option>
-              <option>Andhra Pradesh</option>
-              <option>Andhra Pradesh</option>
-              <option>Andhra Pradesh</option>
-              <option>Andhra Pradesh</option>
-              <option>Andhra Pradesh</option>
+    <div class="fluid-container bg-container">
+      <div class="row main-container">
+        <div class="col-12 text-center">
+          <h1 class="main-heading">Upload your house details</h1>
+        </div>
+        <div class="col-12 mt-3">
+          <form class="form-container" method="post" action="./upload_details1.php" id="formId" >
+            <label for="stateId" class="label-text"
+              >State</label
+            >
+            <select class="form-control" id="stateId">
+              <option selected value="AndhraPradesh">AndhraPradesh</option>
             </select>
-            <label for="country"> Enter your country </label>
-            <input id="country" type="text" placeholder="Enter your country" />
-            <label for="district"> Enter your district </label>
-            <input
-              id="district"
-              type="text"
-              placeholder="Enter your district"
-            />
-            <label for="village"> Enter your village </label>
-            <input id="village" type="text" placeholder="Enter your village" />
+            <div class="form-group mt-1">
+              <label  class="label-text" for="districtId">District</label>
+              <input
+                type="text"
+                class="form-control"
+                id="districtId"
+                placeholder="Enter your district"
+              />
+            </div>
+            <div class="form-group">
+              <label for="addressId" class="label-text"
+                >Address</label
+              >
+              <textarea
+                class="form-control"
+                id="addressId"
+                rows="3"
+                placeholder="Address"
+              ></textarea>
+            </div>
+            <div class="form-group mt-1">
+              <label for="ownerId" class="label-text"
+                >Your Name</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="ownerId"
+                placeholder="Enter ur Name"
+              />
+            </div>
+            <div class="form-group mt-1">
+              <label for="bhkId" class="label-text"
+                >Type-(BHK)</label
+              >
+              <input
+                type="number"
+                class="form-control"
+                id="bhkId"
+                placeholder="Example:-2BHK"
+              />
+            </div>
+            <div class="form-group">
+              <label for="houseDescId" class="label-text"
+                >House Description</label
+              >
+              <textarea
+                class="form-control"
+                id="houseDescId"
+                rows="3"
+                placeholder="House Description"
+              ></textarea>
+            </div>
 
-            <label for="pics"> Add pics </label>
-            <input id="pics" type="file" />
-            <br />
-            <label>Upload</label>
-            <button type="submit">Upload</button>
-            <span id="error"></span>
+            <div class="col-12">
+              <h1 class="contact-details">Contact Details</h1>
+            </div>
+            <div class="contact-container">
+              <div class="form-group m-1">
+                <label for="phoneId" class="label-text"
+                  >Phone No:-
+                </label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="phoneId"
+                  placeholder="enter your district"
+                />
+              </div>
+              <div class="form-group m-1">
+                <label for="emailId" class="label-text"
+                  >Email:-
+                </label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="emailId"
+                  placeholder="enter your district"
+                />
+              </div>
+            </div>
+            <p id="errorId" class="error"></p>
+            <div class="mt-2">
+              <button type="submit" class="btn btn-primary">SUBMIT</button>
+              
+            </div>
           </form>
         </div>
       </div>
     </div>
     <script>
-      let form = document.getElementById("form");
+      let form = document.getElementById("formId");
       form.addEventListener("submit", (event) => {
         event.preventDefault();
-        validate();
+        validateDetails();
       });
 
-      function validate() {
-        let name = document.getElementById("name").value.trim();
+      function validateDetails(){
 
-        let error_element = document.getElementById("error");
+        let state=document.getElementById("stateId").value.trim();
+        let district=document.getElementById("districtId").value.trim();
+        let address=document.getElementById("addressId").value.trim();
+        let ownerName=document.getElementById("ownerId").value.trim();
+        let bhkno=document.getElementById("bhkId").value.trim();
+        let houseDesc=document.getElementById("houseDescId").value.trim();
+        let phoneno=document.getElementById("phoneId").value.trim();
+        let email=document.getElementById("emailId").value.trim();
+        let error=document.getElementById("errorId");
 
-        if (name == "") {
-          error_element.innerText = "*Name cannot be empty";
-          return;
+        if(district==""){
+            error.textContent="* District cannot be empty..."
+            return;
         }
-        if (/\d/.test(name)) {
-          error_element.innerText = "*Name cannot contain Digits";
-          is_name_valid = false;
-          return;
+        if(address==""){
+            error.textContent="* Address cannot be empty..."
+            return;
         }
-        if (name.length < 3) {
-          error_element.innerText = "*Name cannot be lessthan 3 Characters";
-          is_name_valid = false;
-          return;
+        if(ownerName==""){
+            error.textContent="* Owner name cannot be empty..."
+            return;
+        }
+        if(bhkno==""){
+            error.textContent="* BHK no  cannot be empty..."
+            return;
+        }
+        if(houseDesc==""){
+            error.textContent="* House desc cannot be empty..."
+            return;
+        }
+        if(phoneno==""){
+            error.textContent="* Phone no cannot be empty..."
+            return;
+        }
+        if(email==""){
+            error.textContent="* Email cannot be empty..."
+            return;
         }
 
-        if (pwd == "") {
-          error_element.innerText = "*Password cannot be empty";
+        alert("Successfully Uploaded Details")
 
-          return;
-        }
-        if (pwd.length < 8) {
-          error_element.innerText = "*Password cannot be lessthan 8 Characters";
+        form.submit();
+        
+        window.location.replace("./text.html")
 
-          return;
-        }
-        if (!/[a-z]+/.test(pwd)) {
-          error_element.innerText =
-            "*Password must contain one lowercase letter";
 
-          return;
-        }
-        if (!/[A-Z]+/.test(pwd)) {
-          error_element.innerText =
-            "*Password must contain one uppercase letter";
+        
 
-          return;
-        }
-        if (!/[@#&-]+/.test(pwd)) {
-          error_element.innerText =
-            "*Password must contain one Special Character";
 
-          return;
-        }
-        if (pwd != cpwd) {
-          error_element.innerText = "*Password confirmation mismatch";
-          is_pwd_valid = false;
-          return;
-        }
-        if (!is_checked) {
-          error_element.innerText =
-            "Please Agree Terms and Conditions to Log-in";
-          return;
-        }
-        if (is_name_valid && is_pwd_valid && is_checked) {
-          form.submit();
-        }
       }
+
     </script>
+
+<center><a href="../../Tenents_Choice1 by sujan/Home/index.html"><button class="btn btn-dark" ">
+  back
+</button></a></center>
   </body>
 </html>
